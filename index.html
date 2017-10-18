@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Profesorski pasjans</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="example.css" />
+	<link rel="stylesheet" href="libs/jquery/jquery-ui.min.css" />
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="libs/blueprint/blueprint.css" />
+
+
+	<script src="libs/jquery/jquery-1.7.min.js"></script>
+	<script src="libs/jquery/jquery-ui.min.js"></script>
+	<script src="libs/jquery/jquery-ui.structure.min.js"></script>
+	<script src="libs/jquery/jquery-ui.theme.min.js"></script>
+	<script src="libs/jquery/jquery-ui.theme.min.js"></script>
+	<script src="libs/bootstrap/bootstrap.min.js"></script>
+
+</head>
+
+<body class="container-fluid" style="background-color: green">
+	<!--<img class="preload" src="img/cards.png"/>-->
+	<div class="row">
+		<div id="card-table" class="col-md-9">
+			<div id="card-slots"></div>
+		</div>
+		<div id="right-menu" class="col-md-3 pt-card">
+			<h2>Profesorski pasjans</h2>
+			<p>Celem gry jest, aby w każdym wierszu karty tego samego koloru zostały ułożone wg rosnącej wartości tj. od As do Króla</p>
+			<p>Zasady</p>
+			<p>- kartę można przeniesć na wolne miejsce</p>
+			<p>- kartę można położyć, gdy jest w tym samym kolorze co poprzedzająca karta i ma wartość o jeden punkt wyższą </p>
+			<p>Przykład: na prawo od 7 trefl można położyć 8 trefl lub 8 pik</p>
+			<p>Cofnij - cofa ostatni ruch</p>
+			<p>Druga szansa - zbiera niedopasowane karty i układa je ponownie, zostawiając wolne miejsce po ostatniej prawidłowo ułożonej karcie</p>
+
+			<div style="color:black; padding-top:20px">
+				<button type="button" class='pt-button pt-intent-primary' id="undo">Cofnij</button>
+				<button type="button" id="secondChance" class='pt-button pt-intent-danger'><div>Druga&nbsp;szansa</div></button>
+			</div>
+		</div>
+	</div>
+	<!-- load this at the bottom so the #card-table element exists -->
+	<script src="cards.js"></script>
+	<script src="solitaire.js"></script>
+</body>
+
+</html>
