@@ -22,11 +22,11 @@ a img {
 	right: 0; 
 	border: 0;			
 }
-button {
+/* button {
 	height:30px;
 	width:100px;
 	margin:8px auto;
-}
+} */
 img.preload {
 	display:none;
 }

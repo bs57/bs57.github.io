@@ -2,7 +2,8 @@
 // //Tell the library which element to use for the table
 cards.init({ table: '#card-table' });
 
-var cardHistory = (function () {
+var cardHistory = (function () 
+{
 
 	var wholeHistory = [];
 
@@ -101,7 +102,7 @@ var slots = (function () {
 			var previousSlot = slots.AllSlots.find(function (a) { return a.index === Math.max(0, slotNumber - 1) });
 
 			if (previousSlot.card !== null &&
-				(previousSlot.card.isBlack() === card.isBlack() && (previousSlot.card.rank - card.rank === -1))) {
+				(previousSlot.card.suit === card.suit && (previousSlot.card.rank - card.rank === -1))) {
 				ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
 				ui.draggable.draggable('option', 'revert', false);
 
@@ -188,11 +189,13 @@ $('#undo').click(function () {
 	cardHistory.undo();
 });
 
-$('#secondChance').click(function () {
-	secondChance();
+$('#secondChance').click(secondChance);
 
-});
+$('#newGameConfirm').click(newGame);
 
+function newGame(){
+	location.reload();
+}
 
 function secondChance() {
 	var startingColumns = [0, 0, 0, 0, 0, 0, 0, 0];

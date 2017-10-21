@@ -9,10 +9,8 @@
 	<link rel="stylesheet" href="example.css" />
 	<link rel="stylesheet" href="libs/jquery/jquery-ui.min.css" />
 	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" href="libs/blueprint/blueprint.css" />
 
-
-	<script src="libs/jquery/jquery-1.7.min.js"></script>
+	<script src="libs/jquery/jquery-3.2.1.min.js"></script>
 	<script src="libs/jquery/jquery-ui.min.js"></script>
 	<script src="libs/jquery/jquery-ui.structure.min.js"></script>
 	<script src="libs/jquery/jquery-ui.theme.min.js"></script>
@@ -27,20 +25,47 @@
 		<div id="card-table" class="col-md-9">
 			<div id="card-slots"></div>
 		</div>
-		<div id="right-menu" class="col-md-3 pt-card">
+		<div id="right-menu" class="col-md-3">
 			<h2>Profesorski pasjans</h2>
 			<p>Celem gry jest, aby w każdym wierszu karty tego samego koloru zostały ułożone wg rosnącej wartości tj. od As do Króla</p>
 			<p>Zasady</p>
 			<p>- kartę można przeniesć na wolne miejsce</p>
 			<p>- kartę można położyć, gdy jest w tym samym kolorze co poprzedzająca karta i ma wartość o jeden punkt wyższą </p>
-			<p>Przykład: na prawo od 7 trefl można położyć 8 trefl lub 8 pik</p>
+			<p>Przykład: na prawo od 7 trefl można położyć 8 trefl</p>
 			<p>Cofnij - cofa ostatni ruch</p>
-			<p>Druga szansa - zbiera niedopasowane karty i układa je ponownie, zostawiając wolne miejsce po ostatniej prawidłowo ułożonej karcie</p>
+			<p>Druga szansa - zbiera niedopasowane karty i układa je ponownie, zostawiając wolne miejsce po ostatniej prawidłowo ułożonej
+				karcie
+			</p>
 
 			<div style="color:black; padding-top:20px">
-				<button type="button" class='pt-button pt-intent-primary' id="undo">Cofnij</button>
-				<button type="button" id="secondChance" class='pt-button pt-intent-danger'><div>Druga&nbsp;szansa</div></button>
+				<button type="button" class="btn btn-primary" id="undo">Cofnij</button>
+				<button type="button" id="secondChance" class="btn btn-success" style="width:120px">Druga&nbsp;szansa</button>
 			</div>
+			<div>
+				<button type="button" id="newGame" class="btn btn-danger" data-toggle="modal" data-target="#myModal" style="width: 100%;margin-top: 10px;margin-bottom: 10px; margin-top: 10px;margin-right: 10px;">
+					<div>Nowa&nbsp;gra</div>
+				</button>
+			</div>
+
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title" style="color: black">Potwierdzenie</h4>
+						</div>
+						<div class="modal-body">
+							<p style="color: black">Czy na pewno chcesz porzucić aktualną rozgrywkę i zacząć od początku?</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Nie</button>
+							<button type="button" id="newGameConfirm" class="btn btn-default" data-dismiss="modal">Tak</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 	<!-- load this at the bottom so the #card-table element exists -->
